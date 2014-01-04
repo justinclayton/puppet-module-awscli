@@ -8,4 +8,4 @@ description 'Downloads and installs the AWS CLI tools for Linux.'
 project_page 'https://gitlab.amer.gettywan.com/puppet/awscli'
 
 ## Add dependencies, if any:
-dependency 'stahnma/epel'
+dependency 'stahnma/epel', '>=0.0.1'
