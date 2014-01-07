@@ -1,14 +1,4 @@
-# == Class: awscli
-#
-# === Authors
-#
-# John Reeder <john.reeder@gettyimages.com>
-# Justin Clayton <justin.clayton@gettyimages.com>
-#
-# === Copyright
-#
-# Copyright 2013 Getty Images, unless otherwise noted.
-#
+# Class: awscli
 class awscli( $enable_epel = true ) {
 
   if $::osfamily != 'redhat' {

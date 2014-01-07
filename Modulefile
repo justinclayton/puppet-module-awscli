@@ -1,5 +1,5 @@
 name    'justinclayton-awscli'
-version '1.0.0'
+version '1.0.1'
 source 'http://github.com/justinclayton/puppet-module-awscli.git'
 author 'justinclayton'
 license 'MIT'
