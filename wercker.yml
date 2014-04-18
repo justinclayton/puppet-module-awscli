@@ -20,6 +20,6 @@ build:
                 echo "from location $(which ruby)"
                 echo -p "gem list: $(gem list)"
 
-         - script:
+        - script:
             name: run rspec-puppet
             code: bundle exec rake spec
