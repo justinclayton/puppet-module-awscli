@@ -23,4 +23,3 @@ build:
          - script:
             name: run rspec-puppet
             code: bundle exec rake spec
-        - wercker/hipchat-notify@1.0.3
