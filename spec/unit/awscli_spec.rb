@@ -56,4 +56,26 @@ describe 'awscli', :type => :class do
       })
     end
   end
+
+  context 'on ubuntu/debian' do
+    let(:facts) do
+      {
+        :osfamily => 'debian'
+      }
+    end
+
+    it 'should not include epel' do
+      should_not include_class('epel')
+    end
+
+    it 'should install pip' do
+      should contain_package('python-pip').with_ensure('installed')
+    end
+    it 'should install awscli via pip' do
+      should contain_package('awscli').with({
+        :ensure   => 'installed',
+        :provider => 'pip'
+      })
+    end
+  end
 end
