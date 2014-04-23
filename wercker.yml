@@ -23,3 +23,11 @@ build:
         - script:
             name: run rspec-puppet
             code: bundle exec rake spec
+
+        - script:
+            name: apply puppet module
+            code: echo "some librarian-puppet code will go here"
+
+        - script:
+            name: run serverspec
+            code: bundle exec rake serverspec
