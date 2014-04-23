@@ -28,7 +28,7 @@ build:
             name: apply puppet module
             code: |
                 bundle exec rake spec_prep
-                bundle exec puppet apply -v -e "include awscli" --modulepath "spec/fixtures/modules"
+                rvmsudo bundle exec puppet apply -v -e "include awscli" --modulepath "spec/fixtures/modules" || exit 1
                 bundle exec rake spec_clean
 
         - script:
