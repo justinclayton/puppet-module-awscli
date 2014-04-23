@@ -1,7 +1,11 @@
 ---
-default_set: 'centos-64-x64'
+default_set: 'ubuntu-server-12042-x64'
 sets:
   'centos-64-x64':
     nodes:
       "centos6.awscli.vm":
         prefab: 'centos-64-x64'
+  'ubuntu-server-12042-x64':
+    nodes:
+      "ubuntu12.awscli.vm":
+        prefab: 'ubuntu-server-12042-x64'
