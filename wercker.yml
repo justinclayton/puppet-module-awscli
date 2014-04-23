@@ -26,7 +26,10 @@ build:
 
         - script:
             name: apply puppet module
-            code: echo "some librarian-puppet code will go here"
+            code: |
+                bundle exec rake spec_prep
+                bundle exec puppet apply -v -e "include awscli" --modulepath "spec/fixtures/modules"
+                bundle exec rake spec_clean
 
         - script:
             name: run serverspec
