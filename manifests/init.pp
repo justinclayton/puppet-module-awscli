@@ -1,13 +1,21 @@
 # Class: awscli
 class awscli( $enable_epel = true ) {
 
-  if $::osfamily != 'redhat' {
-    fail("unsupported osfamily \"${::osfamily}\"")
-  }
+  case $::osfamily {
+    'redhat': {
+      if $enable_epel {
+        include epel
+        Class['epel'] -> Package['python-pip']
+      }
+    }
 
-  if $enable_epel {
-    include epel
-    Class['epel'] -> Package['python-pip']
+    'debian': {
+      # nothing special here yet
+    }
+
+    default: {
+      fail("unsupported osfamily \"${::osfamily}\"")
+    }
   }
 
   package { 'python-pip':
